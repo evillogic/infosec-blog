@@ -1,6 +1,8 @@
 [submodule "public"]
 	path = public
 	url = git@github.com:evillogic/evillogic.github.io.git
+	branch = master
 [submodule "themes/risotto"]
 	path = themes/risotto
 	url = git@github.com:evillogic/wooper-risotto.git
+	branch = master

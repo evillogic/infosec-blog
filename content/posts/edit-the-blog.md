@@ -1,7 +1,7 @@
 ---
 title: "Edit the Blog"
 date: 2022-09-04T16:18:56-07:00
-draft: true
+draft: false
 ---
 
 clone the blog with
