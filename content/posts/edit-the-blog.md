@@ -16,18 +16,26 @@ create a new page with
 hugo new <page-name>.md
 ```
 
-Building the pages is simply `hugo`. You can then simply navigate to the public directory and push the change.
+Building the pages is simply `hugo`, however due to submodule behavior we need to first checkout the master submodule branch. You can then simply navigate to the public directory and push the change.
 
 ```shell
+pushd public
+git checkout master
+popd
+hugo
 pushd public
 git add .
 git commit -m "added some content"
 git push
 popd
+git submodule update --remote --merge
+git add .
+git commit -m "update the submodule pointer and add source content"
+git push
 ```
 
-Or here is a handy alias
+Or here is a handy alias which can be invoked with an argument commit message
 
 ```shell
-alias update-blog='f(){ pushd public; git add .; git commit -m "$@"; git push; popd; unset -f f; }; f'
+alias update-blog='f(){ pushd public; git checkout maseter; popd; hugo; pushd public; git add .; git commit -m "$@"; git push; popd; git submodule update --remore --merge; git add .; git commit -m "$@"; git push; unset -f f; }; f'
 ```
