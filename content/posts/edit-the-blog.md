@@ -37,5 +37,5 @@ git push
 Or here is a handy alias which can be invoked with an argument commit message
 
 ```shell
-alias update-blog='f(){ pushd public; git checkout maseter; popd; hugo; pushd public; git add .; git commit -m "$@"; git push; popd; git submodule update --remore --merge; git add .; git commit -m "$@"; git push; unset -f f; }; f'
+alias update-blog='f(){ pushd public; git checkout master; popd; hugo; pushd public; git add .; git commit -m "$@"; git push; popd; git submodule update --remore --merge; git add .; git commit -m "$@"; git push; unset -f f; }; f'
 ```
