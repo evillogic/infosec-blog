@@ -4,6 +4,8 @@ date: 2022-09-08T08:39:26-07:00
 draft: false
 ---
 
+<br>
+
 # Foreword
 
 Multiple researchers in the community have given dependency confusion and other supply chain attacks a bad name recently. While there are very valid reasons to perform this attack, please do not pollute pypi or any other package manager with typosquatting, stolen code, or other non-targetted attacks in the name of security research. It's no different than spreading malware. The point has been made. Please be responsible.
@@ -58,7 +60,7 @@ Actually bundling and publishing this code is as easy as `python setup.py sdist`
 
 # Without hooking
 
-It's also worth noting that although most examples are hooking other functions using cmdclass in the end python is just running the script you supply and you can get as creative with it as you want. You may still want to keep the setup call however if you would like your module to build and install correctly. The following example will execute code every time `setup.py` is executed, including when you use to generate the sdist.
+It's also worth noting that although most examples are hooking other functions using cmdclass in the end python is just running the script you supply and you can get as creative with it as you want. You may still want to keep the setup call however if you would like your module to build and install correctly. The following example will execute code every time `setup.py` is executed, including when you use it to generate the sdist.
 
 ```python
 from setuptools import setup
@@ -107,6 +109,7 @@ Thanks to [mschwager](https://github.com/mschwager) for his contributions as wel
 
 # Links
 
-https://thehackernews.com/2022/09/warning-pypi-feature-executes-code.html
+<br>
 
-https://github.com/mschwager/0wned
+* https://thehackernews.com/2022/09/warning-pypi-feature-executes-code.html
+* https://github.com/mschwager/0wned
