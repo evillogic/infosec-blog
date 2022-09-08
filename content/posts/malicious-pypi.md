@@ -14,7 +14,7 @@ Multiple researchers in the community have given dependency confusion and other 
 
 While most python packages are distributed as wheels, the ["binary" distribution format](https://packaging.python.org/en/latest/specifications/binary-distribution-format/), Pypi also enables developers to distribute their package as [source distributions](https://packaging.python.org/en/latest/specifications/source-distribution-format/) (or sdist). The sdist allows developers to suply the source code as the distribution such that the code is compiled into a wheel by the distutils/setuptools module on the system that installs it by calling the setup.py script that is bundled into the sdist. This will also occur even if the module if the module is downloaded via `pip download`.
 
-As the setup.py script is supplied by the developer, it is easy to hook parts of distutils and supply your own code instead. Most examples use the built-in `cmdclass` parameter on the setup function to hook a specific command given to `setup.py`. Here is an example:
+As the setup.py script is supplied by the developer, it is easy to hook parts of distutils and supply your own code instead. Most examples use the built-in `cmdclass` parameter on the setup function to hook a specific command given to setup.py. Here is an example:
 
 ```python
 from setuptools import setup
@@ -60,7 +60,7 @@ Actually bundling and publishing this code is as easy as `python setup.py sdist`
 
 # Without hooking
 
-It's also worth noting that although most examples are hooking other functions using cmdclass in the end python is just running the script you supply and you can get as creative with it as you want. You may still want to keep the setup call however if you would like your module to build and install correctly. The following example will execute code every time `setup.py` is executed, including when you use it to generate the sdist.
+It's also worth noting that although most examples are hooking other functions using cmdclass in the end python is just running the script you supply and you can get as creative with it as you want. You may still want to keep the setup call however if you would like your module to build and install correctly. The following example will execute code every time setup.py is executed, including when you use it to generate the sdist.
 
 ```python
 from setuptools import setup
@@ -103,7 +103,7 @@ There are many use cases where you might want to compile your code differently o
 
 Attacks on package managers are increasingly being considered as low-effort high-reward opportunities for attackers in much the same way that Android apps and Chrome extensions have historically been abused to distribute malware. This is already becoming a popular attack, and package managers are a particularly soft target due to lack of their own anti-malware teams and permission models.
 
-While it is difficult to prevent these attacks from occurring, it should be easy to detect this technique due to the requirements of a package being distributed as a `.tar.gz file` and the setup.py entry-point. I hope to see more research in this space.
+While it is difficult to prevent these attacks from occurring, it should be easy to detect this technique due to the requirements of a package being distributed as a .tar.gz file and the setup.py entry-point. I hope to see more research in this space.
 
 Thanks to [mschwager](https://github.com/mschwager) for his contributions as well, 0wned is a great example.
 
