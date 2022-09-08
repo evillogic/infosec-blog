@@ -46,7 +46,7 @@ url = "mailto:evillogic1@gmail.com"
 
 [[params.socialLinks]]
 icon = "ai ai-arxiv"
-title = "Hacking"
+title = "Happy Hacking!"
 url = "javascript:alert('Happy hacking!');"
 
 [menu]
