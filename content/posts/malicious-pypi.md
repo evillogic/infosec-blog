@@ -4,13 +4,13 @@ date: 2022-09-08T08:39:26-07:00
 draft: false
 ---
 
-#Foreword
+# Foreword
 
 Multiple researchers in the community have given dependency confusion and other supply chain attacks a bad name recently. While there are very valid reasons to perform this attack, please do not pollute pypi or any other package manager with typosquatting, stolen code, or other non-targetted attacks in the name of security research. It's no different than spreading malware. The point has been made. Please be responsible.
 
-#Executing code on package install
+# Executing code on package install
 
-While most python packages are distributed as wheels, the ["binary" distribution format](https://packaging.python.org/en/latest/specifications/binary-distribution-format/), Pypi also enables developers to distribute their package as [source distributions](https://packaging.python.org/en/latest/specifications/source-distribution-format/), or sdist. The sdist allows developers to suply the source code as the distribution such that the code is compiled into a wheel by the distutils/setuptools module on the system that installs it by calling the setup.py script that is bundled into the sdist. This will also occur even if the module if the module is downloaded via `pip download`.
+While most python packages are distributed as wheels, the ["binary" distribution format](https://packaging.python.org/en/latest/specifications/binary-distribution-format/), Pypi also enables developers to distribute their package as [source distributions](https://packaging.python.org/en/latest/specifications/source-distribution-format/) (or sdist). The sdist allows developers to suply the source code as the distribution such that the code is compiled into a wheel by the distutils/setuptools module on the system that installs it by calling the setup.py script that is bundled into the sdist. This will also occur even if the module if the module is downloaded via `pip download`.
 
 As the setup.py script is supplied by the developer, it is easy to hook parts of distutils and supply your own code instead. Most examples use the built-in `cmdclass` parameter on the setup function to hook a specific command given to `setup.py`. Here is an example:
 
@@ -56,7 +56,7 @@ You can try this out by simply writing it to a setup.py file in a new directory 
 
 Actually bundling and publishing this code is as easy as `python setup.py sdist` and then uploading it via twine. [See the docs here.](https://docs.python.org/3/distutils/setupscript.html) 
 
-#Without hooking
+# Without hooking
 
 It's also worth noting that although most examples are hooking other functions using cmdclass in the end python is just running the script you supply and you can get as creative with it as you want. You may still want to keep the setup call however if you would like your module to build and install correctly. The following example will execute code every time `setup.py` is executed, including when you use to generate the sdist.
 
@@ -91,13 +91,13 @@ setup(
 bad_stuff()
 ```
 
-#Why is this allowed?
+# Why is this allowed?
 
 > These are useful for end users wanting to develop your sources, and for end user systems where some local compilation step is required (such as a C extension).
 
 There are many use cases where you might want to compile your code differently on a different machine, check attributes of the system, compile other languages, etc.
 
-#Other thoughts
+# Other thoughts
 
 Attacks on package managers are increasingly being considered as low-effort high-reward opportunities for attackers in much the same way that Android apps and Chrome extensions have historically been abused to distribute malware. This is already becoming a popular attack, and package managers are a particularly soft target due to lack of their own anti-malware teams and permission models.
 
@@ -105,7 +105,7 @@ While it is difficult to prevent these attacks from occurring, it should be easy
 
 Thanks to [mschwager](https://github.com/mschwager) for his contributions as well, 0wned is a great example.
 
-#Links
+# Links
 
 https://thehackernews.com/2022/09/warning-pypi-feature-executes-code.html
 
