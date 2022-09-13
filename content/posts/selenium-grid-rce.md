@@ -217,8 +217,10 @@ def main():
 
 # Basic RCE Usage
 
-> python3 -i selenium-poc.py -u <target-url> -p <target-port> -w <your-address> -e <bash-exploit-script>
-> main() 
+```shell
+python3 -i selenium-poc.py -u <target-url> -p <target-port> -w <your-address> -e <bash-exploit-script>
+main()
+```
 
 First of all, much of this script is stolen from a publicly available exploit by another author. This original script however did not work correctly when targetting linux hosts in practice, so I expanded upon it until it did. I have added in multiple methods that I attempted to use to get this exploit working on linux targets and defined the webdriver as a global, which is very important if anything goes wrong during exploitation. The addtional exploit methods should come in handy to anyone stuck in a similar situation in the future.
 
