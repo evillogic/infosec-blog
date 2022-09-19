@@ -1,4 +1,4 @@
-baseURL = 'https://evillogic.github.io'
+baseURL = 'https://blog.kazam.io'
 languageCode = 'en-us'
 title = 'infosec blog'
 theme = 'risotto'
