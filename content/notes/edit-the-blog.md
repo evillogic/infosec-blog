@@ -18,6 +18,16 @@ hugo new <page-name>.md
 
 Building the pages is simply `hugo`, however due to submodule behavior we need to first checkout the master submodule branch. You can then simply navigate to the public directory and push the change.
 
+The workflow looks something like this:
+
+1. build the new content
+2. the new content is written to the public folder, a submodule pointing to evillogic/evillogic.github.io
+3. push the new contents of the submodule
+4. update the submodule reference in this repository (evillogic/infosec-blog)
+5. push the new references to the master branch of this repository
+
+Here is the script to do the job:
+
 ```shell
 pushd public
 git checkout master
