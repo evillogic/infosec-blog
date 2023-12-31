@@ -34,12 +34,12 @@ git checkout master
 popd
 hugo
 pushd public
-git add .
+git add -A
 git commit -m "added some content"
 git push
 popd
 git submodule update --remote --merge
-git add .
+git add -A
 git commit -m "update the submodule pointer and add source content"
 git push
 ```
