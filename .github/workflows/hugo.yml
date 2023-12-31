@@ -58,12 +58,13 @@ jobs:
         env: 
           CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
           CI_COMMIT_AUTHOR: Continuous Integration
-          GITHUB_TOKEN: ${{ secrets.BLOG_PAT }}
+          BLOG_PAT: ${{ secrets.BLOG_PAT }}
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "evillogic1@gmail.com"
           git add -A
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          export GITHUB_TOKEN="${{ env.BLOG_PAT }}"
           git push origin HEAD:master
       - name: Update references
         env: 
