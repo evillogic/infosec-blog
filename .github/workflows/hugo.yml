@@ -67,6 +67,7 @@ jobs:
           git config --global user.email "evillogic1@gmail.com"
           git add -A
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          echo ${{ secrets.BLOG_PAT }}
           git remote set-url origin https://evillogic:${{ secrets.BLOG_PAT }}@github.com/evillogic/evillogic.github.io.git
           git pull --no-rebase origin master
           git push origin HEAD:master
