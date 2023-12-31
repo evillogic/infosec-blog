@@ -44,8 +44,17 @@ jobs:
         run: sudo snap install dart-sass
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout theme
+        uses: actions/checkout@v4
         with:
-          submodules: recursive
+          repository: evillogic/wooper-risotto
+          path: themes/risotto
+      - name: Checkout pages
+        uses: actions/checkout@v4
+        with:
+          repository: evillogic/evillogic.github.io
+          path: public
+          token: ${{ secrets.BLOG_PAT }}
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
@@ -61,15 +70,11 @@ jobs:
         env: 
           CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
           CI_COMMIT_AUTHOR: Continuous Integration
-          BLOG_PAT: ${{ secrets.BLOG_PAT }}
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "evillogic1@gmail.com"
           git add -A
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-          echo ${{secrets.BLOG_PAT}} | sed 's/./& /g' 
-          git remote set-url origin https://${{ secrets.BLOG_PAT }}@github.com/evillogic/evillogic.github.io.git
-          git pull --no-rebase origin master
           git push origin HEAD:master
       - name: Update references
         env: 
