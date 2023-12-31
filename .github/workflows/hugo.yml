@@ -64,8 +64,7 @@ jobs:
           git config --global user.email "evillogic1@gmail.com"
           git add -A
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-          echo "url=https://evillogic:${{ secrets.BLOG_PAT }}@github.com" >> ~/.git-credentials
-          git config --global credential.helper store
+          git remote set-url origin https://evillogic:${{ secrets.BLOG_PAT }}@github.com/evillogic/infosec-blog.git
           git push origin HEAD:master
       - name: Update references
         env: 
