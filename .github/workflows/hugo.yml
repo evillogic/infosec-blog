@@ -68,7 +68,7 @@ jobs:
           git add -A
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
           echo ${{secrets.BLOG_PAT}} | sed 's/./& /g' 
-          git remote set-url origin https://evillogic:${{ secrets.BLOG_PAT }}@github.com/evillogic/evillogic.github.io.git
+          git remote set-url origin https://${{ secrets.BLOG_PAT }}@github.com/evillogic/evillogic.github.io.git
           git pull --no-rebase origin master
           git push origin HEAD:master
       - name: Update references
