@@ -116,3 +116,78 @@ umount /mountpoint
 
 Chrome Exploit <87
 https://github.com/r4j0x00/exploits/blob/master/README.md
+
+Print JSONL Schema
+```bash
+head -n 1 out.json | jq '
+  def recurseType: . as $in | if type == "object" then
+    reduce keys[] as $key ({}; .[$key] = ($in[$key] | recurseType))
+  elif type == "array" then
+    map(recurseType)
+  else
+    type
+  end;
+  recurseType
+'
+```
+
+Or for less complicated schema
+
+```bash
+jq 'with_entries(.value |= type)' out.json
+```
+
+Or to include the length of strings instead
+
+```bash
+head -n 1 out.json | jq '
+  def recurseTypeOrLength: . as $in | if type == "object" then
+    reduce keys[] as $key ({}; .[$key] = ($in[$key] | recurseTypeOrLength))
+  elif type == "array" then
+    map(recurseTypeOrLength)
+  elif type == "string" then
+    length
+  else
+    type
+  end;
+  recurseTypeOrLength
+'
+```
+
+Graph network loss
+```python
+import subprocess
+import re
+import csv
+import matplotlib.pyplot as plt
+
+# Function to run iperf and return the number of lost packets
+def run_iperf(kpps):
+    cmd = f"sudo /usr/local/bin/iperf -c 10.0.79.99 -u -i 1 -l 16 -b {kpps}kpps -e"
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    lost_packets = re.search(r'(\d+)/(?:\d+)\s+\(\d+%\)', result.stdout)
+    return int(lost_packets.group(1)) if lost_packets else 0
+
+# Main program
+kpps_values = range(1, 401)  # kpps values from 1 to 400
+averages = []
+
+# Open a CSV file to log the data
+with open('iperf_data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['kpps', 'Average Lost Packets'])
+
+    for kpps in kpps_values:
+        total_lost = sum(run_iperf(kpps) for _ in range(10)) / 10
+        averages.append(total_lost)
+        writer.writerow([kpps, total_lost])
+        print(f"kpps: {kpps}, Average Lost Packets: {total_lost}")
+
+# Plotting
+plt.plot(kpps_values, averages)
+plt.xlabel('kpps')
+plt.ylabel('Average Lost Packets')
+plt.title('Average Lost Packets vs. kpps')
+plt.show()
+```
+
