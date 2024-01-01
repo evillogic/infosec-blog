@@ -1,11 +1,11 @@
 baseURL = 'https://blog.kazam.io'
 languageCode = 'en-us'
-title = 'infosec blog'
+title = 'wooper blog'
 theme = 'risotto'
 
 # Copied from the example site
 author = "Kaz Bishop"
-copyright = "© 2022 Kaz Bishop"
+copyright = "© 2024 Kaz Bishop"
 paginate = 3
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
@@ -25,8 +25,8 @@ mode = "wooper-mode"
 
 # Sidebar: about/bio
 [params.about]
-title = "infosec blog"
-description = "Thoughts and notes on security topics"
+title = "wooper blog"
+description = "very serious intellectual thoughts"
 logo = "images/rice.svg"
 
 # Sidebar: social links

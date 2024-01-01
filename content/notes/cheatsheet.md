@@ -6,7 +6,7 @@ draft: false
 
 I think most people hate writing bash scripts. Bash took the concept of syntactic sugar and thought, "what if syntactic pain"?
 
-So anyways, this is a collection of tricks for making sure your thing stays running in a non-forkbomb sort of way.
+So anyways, this is a collection of tricks for making sure your thing stays running in a non-forkbomb sort of way and some other stuff too.
 
 Persistence/application check
 ```bash
