@@ -17,4 +17,8 @@ I then use a github action to build the hugo content. This is the most challengi
 
 This site was very helpful: https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html
 
+### Mobile & other devices
+
 The other drawback of this is that LiveSync doesn't seem to support syncing hidden folders, even when syncing hidden files is enabled and the `.git` folder is not skipped. This seems like it should be supported.
+
+Without the .git folder, Obsidian Git won't be able to recognize the repository. Functionally this means you have to clone the git repo from every machine you want to publish from. I'll probably try and fix this at some point.
