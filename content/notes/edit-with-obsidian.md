@@ -13,6 +13,8 @@ Where the basic idea is just to use Obsidian Git to push changes to the reposito
 
 Obsidian Git's documentation is useless. Set the custom base path to infosec-blog and make sure your ssh is configured correctly, then reload Obsidian. You can just close it an reopen it.
 
-I then use a github action to build the hugo content. This is the most challenging part because of the submodules. I ended up using a personal access token to allow the action runner to use actions/checkout@v4 with a specific token, which worked much easier than trying to set the PAT in the remote or the credentials within a shell.
+I then use a github action to build the hugo content. This is the most challenging part because of the submodules. I ended up using a personal access token to allow the action runner to use `actions/checkout@v4` with a specific token, which worked much easier than trying to set the PAT in the remote or the credentials within a shell.
 
 This site was very helpful: https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html
+
+The other drawback of this is that LiveSync doesn't seem to support syncing hidden folders, even when syncing hidden files is enabled and the `.git` folder is not skipped. This seems like it should be supported.
