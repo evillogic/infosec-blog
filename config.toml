@@ -27,8 +27,8 @@ mode = "wooper-mode"
 # Sidebar: about/bio
 [params.about]
 title = "wooper blog"
-description = "very serious intellectual thoughts"
-logo = "images/rice.svg"
+description = "very serious intellectual thoughts /s"
+logo = "images/sk8r-wooper.svg"
 
 # Sidebar: social links
 # Available icon sets:
