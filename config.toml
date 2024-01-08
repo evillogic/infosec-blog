@@ -28,7 +28,7 @@ mode = "wooper-mode"
 [params.about]
 title = "wooper blog"
 description = "very serious intellectual thoughts /s"
-logo = "images/sk8r-wooper.png"
+logo = "static/sk8r-wooper.png"
 
 # Sidebar: social links
 # Available icon sets:
