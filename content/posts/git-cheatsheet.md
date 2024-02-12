@@ -2,6 +2,7 @@
 title: Git Setup CheatSheet
 date: 2019-08-23
 draft: false
+description: Git cheatsheet for dummies. How to set up your local machine, new repositories, and gitignore
 ---
 ## Setting up your user
 

@@ -2,6 +2,7 @@
 title: Bypassing Windows Defender and AMSI 2019 With Privileges
 date: 2019-09-23
 draft: false
+description: How to bypass Windows Defender and AMSI
 ---
 These steps assume you have access to powershell with admin rights. For the record, I’m not sure if this will work on a domain joined machine where conflicting policies may have been set. The AMSI script works by patching the AMSI DLL in memory, which means it’s not persistent and does not require privileges. The Defender command changes a registry value, which means it is persistend and it also requires privileges.
 

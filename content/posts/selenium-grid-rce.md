@@ -1,7 +1,8 @@
 ---
-title: "Selenium Grid RCE - Chrome on Linux"
+title: Selenium Grid RCE - Chrome on Linux
 date: 2022-09-12T13:41:09-07:00
 draft: false
+description: How to get RCE on exposed Selenium Grid servers for linux
 ---
 
 Selenium is an awesome tool that you can use to completely drive a web browser through a nice and simple python interface. There's lots of cool possibilities to use this for red teaming, however the simplest is that it can provide a trivial vector for RCE when unauthenticated.

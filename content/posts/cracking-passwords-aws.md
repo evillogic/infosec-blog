@@ -2,6 +2,7 @@
 title: Cracking Legacy Passwords
 date: 2024-02-06
 draft: false
+description: How to crack MySQL323 (Half MD5) and SHA1 on AWS efficiently
 ---
 
 The advent of cloud computing and ephemeral compute has to be one of the greatest things that ever happened to password cracking. Gone are the days of needing to buy an insane GPU rig, spend many to hours build it out, and have it be obsolete by the end of the year.

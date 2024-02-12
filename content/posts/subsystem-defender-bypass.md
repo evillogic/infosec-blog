@@ -2,6 +2,7 @@
 title: Bypassing Windows Defender with the Windows Subsystem for Linux!
 date: 2019-01-16
 draft: false
+description: Using Windows Subsystem for Linux to Bypass Windows Defender
 ---
 
 After watching BHIS’s Sacred Cash Cow Tipping 2020 I was inspired to try out a few of the techniques BHIS demoed, and this is a pretty fun and odd one.

@@ -2,6 +2,7 @@
 title: Overriding Windows TrustedInstaller Permissions
 date: 2019-07-29
 draft: false
+description: How to bypass or override Windows TrustedInstaller to write files to System32
 ---
 
 tl;dr  

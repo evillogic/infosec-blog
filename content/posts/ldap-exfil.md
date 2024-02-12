@@ -2,6 +2,7 @@
 title: An LDAP Exfil Technique
 date: 2020-05-06
 draft: false
+description: Using native LDAP w/ Active Directory (AD) to obfuscate data exfiltration
 ---
 
 Recently I’ve been looking a lot at data exfiltration techniques in general, especially techniques that allow you to bypass network access controls and escape from PCI environments.

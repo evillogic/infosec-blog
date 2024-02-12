@@ -1,7 +1,8 @@
 ---
-title: "Executing Code on Python Package Installs - Malicious Pypi"
+title: Executing Code on Python Package Installs - Malicious Pypi
 date: 2022-09-08T08:39:26-07:00
 draft: false
+description: How to execute code on a python package install and perform dependency confusion attacks on Pypi
 ---
 
 <br>

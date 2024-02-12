@@ -2,6 +2,7 @@
 title: Setting up Burp Suite on Android 7/8/9/10
 date: 2021-02-15
 draft: false
+description: How to set up Burp Suite for Android 7/8/9/10
 ---
 
 NOTE: You will need a rooted phone for this tutorial.  

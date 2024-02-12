@@ -2,6 +2,7 @@
 title: Kali Proxmark Quick Setup
 date: 2019-08-23
 draft: false
+description: How to quickly get up and running with your proxmark on kali linux
 ---
 This massive one-liner should work to install all the source.
 
