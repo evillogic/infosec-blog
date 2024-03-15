@@ -1,17 +1,21 @@
 ---
 title: Cracking Legacy Passwords
-date: 2024-02-06
+date: 2024-03-14
 draft: false
 description: How to crack MySQL323 (Half MD5) and SHA1 on AWS efficiently
 ---
 
 The advent of cloud computing and ephemeral compute has to be one of the greatest things that ever happened to password cracking. Gone are the days of needing to buy an insane GPU rig, spend many to hours build it out, and have it be obsolete by the end of the year.
 
-Unfortunately, the state of password cracking also hasn't changed very much in many years. Hashcat is still the king, rainbow tables are still the most effective method of looking things up, and to my knowledge there are no projects that exist to make deployment, cracking, and infra termination all happen in a single step.
+~~Unfortunately, the state of password cracking also hasn't changed very much in many years. Hashcat is still the king, rainbow tables are still the most effective method of looking things up, and to my knowledge there are no projects that exist to make deployment, cracking, and infra termination all happen in a single step.~~
 
 Rainbow tables are still hard to come by and require torrenting as well, even now that bandwidth rates exceeding 25 Gigabit are readily available  on the cloud and 10 Gigabit fiber is currently being deployed to consumers around the globe. Free, readily available rainbow table sizes cap out around 1 TB from what I have seen, but somehow still require torrenting.
 
 I recently needed to crack some MySQL passwords, and I found that torrenting these rainbow tables was not working on AWS (I can't imagine why /s). Curiously, it also didn't work on my home network though. Luckily, my teammate was able to find that all of the rainbow tables from freerainbowtables.com are also available for direct download, although the site doesn't advertise it. You can view them all [here](http://freerainbowtables.mirror.garr.it/rainbow/RTI2/).
+
+## Modern Cracking Tools
+
+Coalfire released [npk](https://github.com/c6fc/npk) in 2019, which is massively helpful for automated deployment of cloud resources to crack passwords. This is a very cool project that aims to automate the process of spinning up resources to crack passwords and shut them down in order to never need to buy a GPU or risk running expensive cloud resources for too long.
 
 ## Cracking SHA1 with Rainbow Tables
 
