@@ -17,6 +17,8 @@ I recently needed to crack some MySQL passwords, and I found that torrenting the
 
 Coalfire released [npk](https://github.com/c6fc/npk) in 2019, which is massively helpful for automated deployment of cloud resources to crack passwords. This is a very cool project that aims to automate the process of spinning up resources to crack passwords and shut them down in order to never need to buy a GPU or risk running expensive cloud resources for too long.
 
+[Hashtopolis](https://github.com/hashtopolis/server) is the de-facto standard for cracking infrastructure now, which allows management of many cracking jobs through a convenient web application. It supports multiple users, has an API, and allows management of cracking clusers as well.
+
 ## Cracking SHA1 with Rainbow Tables
 
 The rainbow tables are split into several parts, and those parts are split into several parts as well. I can only assume this is done for torrenting purposes. You can download them like this once you've found the table you want.
