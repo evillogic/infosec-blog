@@ -1,5 +1,5 @@
 ---
-title: Mounting a Shared Folder in Kali and VMware Workstation/Player 2019
+title: Mounting a Shared Folder in Kali
 date: 2019-09-14
 draft: false
 description: How to set up a shared folder between a Kali VM and a host Windows machine
