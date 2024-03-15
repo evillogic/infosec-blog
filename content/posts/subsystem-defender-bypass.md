@@ -1,5 +1,5 @@
 ---
-title: Bypassing Windows Defender with the Windows Subsystem for Linux!
+title: Bypassing Windows Defender with WSL
 date: 2019-01-16
 draft: false
 description: Using Windows Subsystem for Linux to Bypass Windows Defender
